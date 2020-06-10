@@ -1,0 +1,23 @@
+.first{
+    background-image: url("https://images.pexels.com/photos/301717/pexels-photo-301717.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+    height: 800px;
+    width: 100%;
+    background-size: cover;
+    padding-top: 30px;
+   }
+   
+   th{
+       background-color: lightseagreen;
+   }
+   tr {
+    background-color: rgb(233, 230, 230);
+   }
+   
+   table {
+    background-color: lightsteelblue;
+    font-size: 20px;
+   }
+
+   input{
+       font-size: 20px;
+   }

@@ -1,0 +1,41 @@
+<div class="alert alert-success" *ngIf='success'>{{success}}</div>
+<div class="alert alert-danger" *ngIf='failure'>{{failure}}</div>
+
+
+<div class="first">
+    <div class="col-md-4 offset-md-4 mt-4">
+        <h4>Update Center</h4>
+        <br>
+        <form #UpdateCenter='ngForm' (ngSubmit)='modifyCenter(UpdateCenter)'>
+
+            <div class="form-group">
+                <input type="hidden" name="centerId" id="centerId" #centerId='ngModel' [(ngModel)]='centerId1'
+                    class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="centerName">Center Name</label>
+                <input type="text" name="centerName" id="centerName" #centerName='ngModel' [(ngModel)]='centerName1'
+                    class="form-control" required pattern="^[a-zA-Z]+(?: [a-zA-Z]+)*$" minlength="3" maxlength="15">
+                <div *ngIf='centerName.touched && centerName.invalid'>
+                    <div class="alert alert-danger" *ngIf='centerName.errors.required'>
+                        *This feild is mandatory
+                    </div>
+                    <div class="alert alert-danger" *ngIf='centerName.errors.minlength'>
+                        *minimum 3 letters are required
+                    </div>
+                    <div class="alert alert-danger" *ngIf='centerName.errors.maxlength'>
+                        *maximum 15 letters are allowed
+                    </div>
+                    <div class="alert alert-danger" *ngIf='centerName.errors.pattern'>
+                        *CenterName allows only alphabets
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success float-right">Update Center</button>
+
+            <button type="reset" class="btn btn-secondary btn-md">Reset</button>
+        </form>
+    </div>
+</div>

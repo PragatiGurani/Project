@@ -1,0 +1,41 @@
+li {
+    padding : 6px;
+}
+
+ nav { 
+    font-style: oblique;
+    font-weight: bolder;
+     background-color : darkgrey; 
+    font-size: 20px;
+    background-size: cover;
+    padding-top: 20px;
+    height: 80px;
+}
+
+.second {
+    height: 60px;
+    width: 80px;
+    decoration: none;
+    border-radius: 20%;
+}
+
+h1 {
+    font-style: italic; 
+    /* background-color : cadetblue; */
+    background-image: url("https://images.pexels.com/photos/751374/pexels-photo-751374.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+    color: gainsboro;
+    text-align:center;
+    padding-bottom: 10px;    
+    margin-bottom: 0px; 
+    color: black;   
+    font-size: 50px; 
+}
+
+.dropdown-item {
+    font-size: 20px;
+}
+
+.first {
+    font-size: 15px;
+    font-weight: lighter;
+}

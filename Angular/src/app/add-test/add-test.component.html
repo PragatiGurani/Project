@@ -1,0 +1,54 @@
+<div class="alert alert-success" *ngIf='success'>{{success}}</div>
+<div class="alert alert-danger" *ngIf='failure'>{{failure}}</div>
+<div class="first">
+
+    <div class="col-md-4 offset-md-4 mt-4">
+        <br>
+        <h4>Add Test</h4>
+        <br>
+        <form #AddedTest='ngForm' (ngSubmit)='addTest(AddedTest)'>
+
+            <div class="form-group">
+                <label for="testName">Test Name</label>
+                <input type="text" name="testName" id="testName" #testName='ngModel' ngModel class="form-control"
+                    required placeholder="Enter Test Name" pattern="^[a-zA-Z]+(?: [a-zA-Z]+)*$" minlength="3"
+                    maxlength="15">
+                <div *ngIf='testName.touched && testName.invalid'>
+                    <div class="alert alert-danger" *ngIf='testName.errors.required'>
+                        *This feild is mandatory
+                    </div>
+                    <div class="alert alert-danger" *ngIf='testName.errors.minlength'>
+                        *minimum 3 letters are required
+                    </div>
+                    <div class="alert alert-danger" *ngIf='testName.errors.maxlength'>
+                        *maximum 15 letters are allowed
+                    </div>
+                    <div class="alert alert-danger" *ngIf='testName.errors.pattern'>
+                        *TestId allows only alphabets
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="centerId">Center Id</label>
+                <input type="text" name="centerId" id="centerId" #centerId='ngModel' ngModel class="form-control"
+                    required placeholder="Enter Center Id" minlength="3" maxlength="15">
+                <div *ngIf='centerId.touched && centerId.invalid'>
+                    <div class="alert alert-danger" *ngIf='centerId.errors.required'>
+                        *This feild is mandatory
+                    </div>
+                    <div class="alert alert-danger" *ngIf='centerId.errors.minlength'>
+                        *minimum 3 letters are required
+                    </div>
+                    <div class="alert alert-danger" *ngIf='centerId.errors.maxlength'>
+                        *maximum 15 letters are allowed
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success float-right">Add Test</button>
+
+            <button type="reset" class="btn btn-secondary btn-md">Reset</button>
+        </form>
+    </div>
+</div>

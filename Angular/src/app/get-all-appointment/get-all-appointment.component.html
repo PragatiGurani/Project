@@ -1,0 +1,38 @@
+<div class="alert alert-success" *ngIf='success'>{{success}}</div>
+<div class="alert alert-danger" *ngIf='failure'>{{failure}}</div>
+<div class="first">
+    <br>
+    <br>
+    <div class="container mt-3">
+        <table class="table table-bordered table-hover">
+            <thead class="bg-info">
+                <tr>
+                    <th>AppointmentId</th>
+                    <th>UserId</th>
+                    <th>User Name</th>
+                    <th>Test Name</th>
+                    <th>Date and Time</th>
+                    <th>Center Id</th>
+                    <th>Appointment Status</th>
+                    <th>Approve</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor='let appointment of appointments'>
+                    <td>{{appointment.appointmentId}}</td>
+                    <td>{{appointment.userId}}</td>
+                    <td>{{appointment.userName}}</td>
+                    <td>{{appointment.testName}}</td>
+                    <td>{{appointment.dateTime}}</td>
+                    <td>{{appointment.centerId}}</td>
+                    <td>{{appointment.appointmentStatus}}</td>
+
+                    <td><button class="btn btn-outline-primary"
+                            (click)='approveAppointment(appointment)'>Choose</button></td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

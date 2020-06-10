@@ -1,0 +1,63 @@
+<h1>HealthCare Application</h1>
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <h3><img src="https://images.pexels.com/photos/139398/thermometer-headache-pain-pills-139398.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            class="second"></h3>
+    <a class="navbar-brand text-dark">HealthCare</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+        aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarDropdown">
+        <ul class="navbar-nav mr-auto ">
+            <li class="nav-item active">
+                <a class="nav-link text-dark" routerLink="/">Home</a>
+            </li>
+
+            <li class="nav-item ">
+                <a class="nav-link" routerLink="/about">About</a>
+            </li>
+
+            <li *ngIf='isAdmin()' class="nav-item dropdown">
+                <a class="btn btn-light dropdown-toggle " id="navbarDropdown1" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Daignostic Center
+                </a>
+
+                <div class="dropdown-menu btn btn-light" aria-labelledby="navbarDropDown">
+                    <a class="dropdown-item" routerLink="/add-center">Add Center</a>
+                    <a class="dropdown-item" routerLink="/get-all-center">View/Delete/Modify Center</a>
+                </div>
+            </li>
+            <!-- dropdown ended -->
+
+            <li *ngIf='isAdmin()' class="nav-item dropdown">
+                <a class="btn btn-light dropdown-toggle" id="navbarDropdown1" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Tests
+                </a>
+
+                <div class="dropdown-menu btn btn-light" aria-labelledby="navbarDropDown">
+                    <a class="dropdown-item" routerLink="/add-test">Add Test</a>
+                    <a class="dropdown-item" routerLink="/get-all-test">View/Delete/Modify Center</a>
+                </div>
+            </li>
+            <!-- dropdown ended -->
+
+            <li *ngIf='isAdmin()' class="first">
+                <a class="nav-link text-dark" routerLink="/get-all-appointment">View Appointments</a>
+            </li>
+
+        </ul>
+
+        <ul class="navbar-nav ml-auto">
+            <li *ngIf='!isLoggedIn()' class="nav-item">
+                <a class="nav-link text-dark" routerLink="/login">Login</a>
+            </li>
+
+            <li *ngIf='isLoggedIn()' class="nav-item">
+                <a class="nav-link text-dark" (click)='isLoggedOut()'>LogOut</a>
+            </li>
+        </ul>
+
+    </div>
+</nav>
